@@ -8,8 +8,20 @@
   background: #9e852e;
 }
 
-html {
+html,
+body {
   font-family: "Montserrat", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+}
+
+.font-secondary {
+  font-family: "Roboto", system-ui, -apple-system, "Segoe UI", sans-serif;
+}
+
+input,
+button,
+select,
+textarea {
+  font: inherit;
 }
 
 .main-container {
@@ -29,20 +41,14 @@ html {
   color: red;
 }
 
-@media (min-width: 640px) and (max-width: calc(1600px - 1px)) {
-  body {
-    background-color: green !important;
-  }
-}
-
 :root {
   --base-color: steelblue;
-  --header-height: 96px;
+  --header-height: 50px;
   --footer-height: 96px;
 }
 @media (min-width: 960px) {
   :root {
-    --header-height: 150px;
+    --header-height: 70px;
     --footer-height: 150px;
   }
 }

@@ -2,19 +2,17 @@
 @import "core/fonts";
 @import "core/layout";
 @import "components/components";
-body{
-	@include fromTo(m,xl){
-		background-color: green !important;
-	}
-}
-
-
+// body{
+// 	@include fromTo(m,xl){
+// 		background-color: green !important;
+// 	}
+// }
 :root{
 	--base-color: steelblue;
-	--header-height: 96px;
+	--header-height: 50px;
 	--footer-height: 96px;
 	@include from(l){
-		--header-height: 150px;
+		--header-height: 70px;
 		--footer-height: 150px;
 	}
 }
