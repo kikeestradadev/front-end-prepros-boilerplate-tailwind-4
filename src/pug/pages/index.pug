@@ -16,7 +16,9 @@ block main-header
 			svg#moon-icon(class="absolute right-2 w-4 h-4 text-gray-300 transition-opacity opacity-0 dark:opacity-100" fill="currentColor" viewBox="0 0 20 20")
 				path(d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z")
 block main-container
-	div(class="container")
-		h1(class="text-6xl font-bold text-gray-900 dark:text-white") Boilerplate
+	section(class="main-container border border-[steelblue]") 
+		div(class="container  border border-[tomato]") 
+			h1(class="text-6xl font-bold text-gray-900 dark:text-white") Boilerplate
+	include ../style-guide/style-guide
 block main-footer
 block scripts

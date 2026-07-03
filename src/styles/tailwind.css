@@ -1,5 +1,5 @@
-@import "tailwindcss/preflight";
-@import "tailwindcss/utilities";
-@import "styles.css";
-
-
+@import "tailwindcss";
+@config "../../tailwind.config.js";
+@source "../../src/**/*.{html,pug,js}";
+@source "../../public/**/*.html";
+@import "./styles.css";
