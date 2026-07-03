@@ -1,4 +1,7 @@
 @import "core/media-queries";
+@import "core/variables";
+
+@import "core/utilities";
 @import "core/fonts";
 @import "core/layout";
 @import "components/components";
@@ -9,13 +12,5 @@ body{
 }
 
 
-:root{
-	--base-color: steelblue;
-	--header-height: 96px;
-	--footer-height: 96px;
-	@include from(l){
-		--header-height: 150px;
-		--footer-height: 150px;
-	}
-}
+
 

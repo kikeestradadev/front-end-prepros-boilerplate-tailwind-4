@@ -17,6 +17,8 @@ html(lang='en' prefix='og: http://ogp.me/ns#', class='no-js')
 		link(rel="preconnect" href="https://fonts.gstatic.com" crossorigin)
 		link(href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet")
 		link(rel="stylesheet" href="./tailwind-dist.css")
+		//- Prism.js CSS (tema Tomorrow Night)
+		link(rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism-tomorrow.min.css")
 		title= currentPage.slice(0,1).toUpperCase() + currentPage.slice(1) + " | " + siteName
 	body(class=`${currentPage} bg-[var(--bg-body)] flex flex-col min-h-screen pt-[var(--header-height)]`, itemscope itemtype="http://schema.org/WebPage")
 		//- here start the Main Header
@@ -28,9 +30,22 @@ html(lang='en' prefix='og: http://ogp.me/ns#', class='no-js')
 			block main-container 
 		//- here ends the Main Container
 		//- here start the Main Footer
-		footer(class='bg-[var(--base-color)] h-[var(--footer-height)]')
+		footer(class='bg-[var(--base-color)] h-[var(--footer-height)] text-white')
 			block main-footer
 		//- here ends the Main Footer
 		script(src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js")
-		script(src="/assets/index-dist.js")
+		//- Prism.js Core
+		script(src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js")
+		//- Prism.js Language Support
+		script(src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-markup.min.js")
+		script(src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-css.min.js")
+		script(src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-javascript.min.js")
+		script(src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-typescript.min.js")
+		script(src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-jsx.min.js")
+		script(src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-tsx.min.js")
+		script(src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-json.min.js")
+		script(src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-bash.min.js")
+		script(src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-scss.min.js")
+		script(src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-markdown.min.js")
+		script(src="./index-dist.js")
 		block scripts

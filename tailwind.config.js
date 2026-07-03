@@ -4,6 +4,7 @@ export default {
 		"./src/**/*.{html,js,pug}",
 		"./public/**/*.html"
 	],
+	darkMode: 'class',
 	theme: {
 		screens: {
 			's': '0px',
