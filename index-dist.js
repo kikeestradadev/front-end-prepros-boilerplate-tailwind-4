@@ -16,6 +16,40 @@ var coreModule = function coreModule() {
 /***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
 __webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": function() { return /* binding */ darkMode; }
+/* harmony export */ });
+function darkMode() {
+  var themeToggle = document.getElementById('theme-toggle');
+  var htmlElement = document.documentElement;
+
+  // Check for saved theme preference or default to system preference
+  var savedTheme = localStorage.getItem('theme');
+  var prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+  var currentTheme = savedTheme || (prefersDark ? 'dark' : 'light');
+
+  // Apply the theme on page load
+  if (currentTheme === 'dark') {
+    htmlElement.classList.add('dark');
+  }
+
+  // Toggle theme when button is clicked
+  if (themeToggle) {
+    themeToggle.addEventListener('click', function () {
+      htmlElement.classList.toggle('dark');
+
+      // Save the user's preference
+      var theme = htmlElement.classList.contains('dark') ? 'dark' : 'light';
+      localStorage.setItem('theme', theme);
+    });
+  }
+}
+
+/***/ }),
+/* 3 */
+/***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
+
+__webpack_require__.r(__webpack_exports__);
 var internalModule = function internalModule() {
   console.log('Hola internal Module');
 };
@@ -49,6 +83,23 @@ var internalModule = function internalModule() {
 /******/ 	}
 /******/ 	
 /************************************************************************/
+/******/ 	/* webpack/runtime/define property getters */
+/******/ 	!function() {
+/******/ 		// define getter functions for harmony exports
+/******/ 		__webpack_require__.d = function(exports, definition) {
+/******/ 			for(var key in definition) {
+/******/ 				if(__webpack_require__.o(definition, key) && !__webpack_require__.o(exports, key)) {
+/******/ 					Object.defineProperty(exports, key, { enumerable: true, get: definition[key] });
+/******/ 				}
+/******/ 			}
+/******/ 		};
+/******/ 	}();
+/******/ 	
+/******/ 	/* webpack/runtime/hasOwnProperty shorthand */
+/******/ 	!function() {
+/******/ 		__webpack_require__.o = function(obj, prop) { return Object.prototype.hasOwnProperty.call(obj, prop); }
+/******/ 	}();
+/******/ 	
 /******/ 	/* webpack/runtime/make namespace object */
 /******/ 	!function() {
 /******/ 		// define __esModule on exports
@@ -66,8 +117,10 @@ var __webpack_exports__ = {};
 !function() {
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _core_modules_coreModule__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(1);
-/* harmony import */ var _internal_modules_internalModule__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(2);
+/* harmony import */ var _core_modules_darkMode__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(2);
+/* harmony import */ var _internal_modules_internalModule__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(3);
 /*here start core layout ui scripts imports*/
+
 
 /*here finish core layout ui scripts imports*/
 
@@ -78,11 +131,12 @@ __webpack_require__.r(__webpack_exports__);
 (function () {
   /*here start core layout ui scripts functions*/
   (0,_core_modules_coreModule__WEBPACK_IMPORTED_MODULE_0__["default"])();
+  (0,_core_modules_darkMode__WEBPACK_IMPORTED_MODULE_1__["default"])();
   /*here finish core layout ui scripts functions*/
 })();
 (function () {
   /*here start internal layout ui components functions*/
-  (0,_internal_modules_internalModule__WEBPACK_IMPORTED_MODULE_1__["default"])();
+  (0,_internal_modules_internalModule__WEBPACK_IMPORTED_MODULE_2__["default"])();
   /*here finish internal layout ui components functions*/
 })();
 }();
